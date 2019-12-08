@@ -5,9 +5,12 @@ import Button from "@material-ui/core/Button";
 import Addcar from "./Addcar";
 import Editcar from "./Editcar";
 import Notifier, { openSnackbar } from "./Notifier";
+import { CSVLink } from "react-csv";
 
 export default function Carlist() {
 	const [cars, setCars] = useState([]);
+
+	const csvData = cars;
 
 	useEffect(() => fetchData(), []);
 
@@ -98,6 +101,19 @@ export default function Carlist() {
 
 	return (
 		<div>
+			<Button
+				style={{ marginTop: 20 }}
+				variant="contained"
+				color="primary"
+				href="#contained-buttons"
+			>
+				<CSVLink
+					style={{ color: "#fff", textDecoration: "none" }}
+					data={csvData}
+				>
+					Download CSV
+				</CSVLink>
+			</Button>
 			<Notifier />
 			<Addcar saveCar={saveCar} />
 			<ReactTable filterable={true} data={cars} columns={columns} />
