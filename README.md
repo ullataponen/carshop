@@ -1,3 +1,9 @@
+# Car Shop
+
+This is a React app for a car shop with basic CRUD functionalities. It utilizes a REST API and UI has been created with the help of Material UI.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
